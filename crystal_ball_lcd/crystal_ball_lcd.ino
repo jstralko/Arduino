@@ -28,14 +28,9 @@ void setup()
 void loop() 
 {
    switch_state = digitalRead(switch_pin);
-  if (switch_state != prev_switch_state) {
-     
-     Serial.print("switch_state: ");
-     Serial.println(switch_state);
-     
+   if (switch_state != prev_switch_state) {
      if (switch_state == LOW) {
        reply = random(8);
-       
        lcd.clear();
        lcd.setCursor(0,0);
        lcd.print("The ball says:");
