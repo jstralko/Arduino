@@ -29,10 +29,14 @@ void loop()
   lcd.clear();
   sensor_value = analogRead(sensor_pin);
   float voltage = (sensor_value / 1024.0) * 5.0;
-  float temp = (voltage - 0.5) * 100;
+  float celsius = (voltage - 0.5) * 100;
+  float fahrenheit = (celsius * 1.800) + 32.00;
   lcd.print("Temperature is  ");
   lcd.setCursor(/*col*/0,/*row*/1);
-  lcd.print(temp);
+  lcd.print(celsius);
+  lcd.print("C (");
+  lcd.print(fahrenheit);
+  lcd.print("F)");
   delay(1000);
 }
 
