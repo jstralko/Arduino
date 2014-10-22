@@ -177,6 +177,7 @@ int8_t
 
 void setup() {
 
+  //Serial.begin(9600);
   // Seed random number generator from an unused analog input:
   randomSeed(analogRead(A0));
 
@@ -184,8 +185,8 @@ void setup() {
   for(uint8_t i=0; i<4; i++) {
     matrix[i].begin(matrixAddr[i]);
     // If using 'small' (1.2") displays vs. 'mini' (0.8"), enable this:
-    if (i > 1) {
-       matrix[i].setRotation(2);
+    if (i > 0) {
+       matrix[i].setRotation(3);
     }
   }
 }
